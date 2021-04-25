@@ -58,20 +58,24 @@ export default function Home(): JSX.Element {
         borderRadius={8}
         flexDir="column"
       >
-        {/* <Heading fontWeight="semibold" fontSize="3xl" mb="8">
-          Itens
-        </Heading> */}
-        <Text pb="8" textAlign="justify" borderBottom="1px" borderColor="#EBEBEB">
+        <Text textAlign="justify">
           Olá! Espero que estejam todos bem 💜 <br />
           <br />
-          Estamos juntando os trapos e é nossa primeira vez nesta vida adulta independente, e, na
-          busca de economizar ao máximo para pagar o aluguel e as contas, estamos aceitando toda
-          ajuda que as pessoas ao nosso redor (amigos e familiares) puderem dar. <br />
+          Estamos juntando os trapos e é nossa primeira vez nesta vida adulta independente. Na busca
+          de economizar ao máximo para pagar o aluguel e as contas, estamos aceitando toda ajuda que
+          as pessoas ao nosso redor (amigos e familiares) puderem dar. <br />
           <br />
           Criamos este site que consta nossa listinha. São preços e produtos diversos que usaremos
           no dia a dia. Sei que estamos em um momento de crise, então entenderemos se alguém não
           puder ajudar. Caso possa, aqui no site consta a sugestão do produto e basta você clicar em
-          Vou Ajudar, pois assim evitamos produtos repetidos ;)
+          Vou Ajudar, pois assim evitamos produtos repetidos ;) <br />
+          <br />
+        </Text>
+
+        <Text fontWeight="semibold">Endereço para envio:</Text>
+
+        <Text pb="8" borderBottom="1px" borderColor="#EBEBEB">
+          Rua Fagundes Dias, 172 - Apto 52 - Saúde - São Paulo/SP - 04055-000
         </Text>
 
         <Skeleton isLoaded={products.length > 0}>
