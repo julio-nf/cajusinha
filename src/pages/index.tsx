@@ -1,10 +1,19 @@
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { Flex, Heading, ListItem, List } from '@chakra-ui/react';
+import { Flex, Heading, ListItem, List, Skeleton } from '@chakra-ui/react';
 
 import { Header } from '../components/Header';
 import { ProductBar } from '../components/ProductBar';
+import { Product } from '../types/product';
+import { api } from '../services/api';
 
 export default function Home(): JSX.Element {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    api.get<Product[]>('/products').then((products) => setProducts(products.data));
+  }, []);
+
   return (
     <>
       <Head>
@@ -15,7 +24,6 @@ export default function Home(): JSX.Element {
 
       <Flex
         m="-8rem auto 0"
-        // p={[8, 8, 8, 20]}
         p={{ base: 8, md: 20 }}
         maxW="960px"
         bg="white"
@@ -26,27 +34,19 @@ export default function Home(): JSX.Element {
           Itens
         </Heading>
 
-        <List>
-          <ListItem>
-            <ProductBar
-              productName="Liquidificador"
-              link="https://www.americanas.com.br/produto/131830784?pfm_carac=Liquidificador&pfm_page=category&pfm_pos=grid&pfm_type=vit_product_grid&voltagem=110V"
-            />
-          </ListItem>
-          <ListItem>
-            <ProductBar
-              productName="Máquina de lavar"
-              link="https://www.americanas.com.br/produto/131830784?pfm_carac=Liquidificador&pfm_page=category&pfm_pos=grid&pfm_type=vit_product_grid&voltagem=110V"
-            />
-          </ListItem>
-          <ListItem>
-            <ProductBar
-              productName="Jogo de panelas"
-              link="https://www.americanas.com.br/produto/131830784?pfm_carac=Liquidificador&pfm_page=category&pfm_pos=grid&pfm_type=vit_product_grid&voltagem=110V"
-              purchased
-            />
-          </ListItem>
-        </List>
+        <Skeleton isLoaded={products.length > 0}>
+          <List>
+            {products.map((product) => (
+              <ListItem key={product.productName}>
+                <ProductBar
+                  productName={product.productName}
+                  link={product.link}
+                  purchased={product.purchased}
+                />
+              </ListItem>
+            ))}
+          </List>
+        </Skeleton>
       </Flex>
     </>
   );

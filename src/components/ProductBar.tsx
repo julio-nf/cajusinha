@@ -1,4 +1,5 @@
 import { Box, Button, Text, ButtonGroup } from '@chakra-ui/react';
+import { api } from '../services/api';
 
 interface ProductBarProps {
   productName: string;
@@ -7,6 +8,12 @@ interface ProductBarProps {
 }
 
 export function ProductBar({ productName, link, purchased = false }: ProductBarProps): JSX.Element {
+  async function handlePurchaseProduct() {
+    const response = await api.post(`/products/${productName}`);
+
+    console.log(response);
+  }
+
   return (
     <Box
       display={{ md: 'flex' }}
@@ -22,11 +29,13 @@ export function ProductBar({ productName, link, purchased = false }: ProductBarP
       {purchased ? (
         <Text>Já garantido 🥰</Text>
       ) : (
-        <ButtonGroup size="md" variant="outline" spacing="1">
+        <ButtonGroup size="md" spacing="1">
           <Button as="a" colorScheme="blue" href={link}>
             Ver sugestão
           </Button>
-          <Button colorScheme="green">Vou ajudar</Button>
+          <Button colorScheme="green" onClick={handlePurchaseProduct}>
+            Vou ajudar
+          </Button>
         </ButtonGroup>
       )}
     </Box>

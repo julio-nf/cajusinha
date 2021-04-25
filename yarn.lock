@@ -1443,6 +1443,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"abort-controller@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "abort-controller@npm:3.0.0"
+  dependencies:
+    event-target-shim: ^5.0.0
+  checksum: cc53ad8df9a6de3f55d4f804fca5106908f855e47b572fb5ab3cdd723b76374686dcefa557a2f87d4396db77e31bc0e6ce9d48637388cef6d884c29ad2691448
+  languageName: node
+  linkType: hard
+
 "acorn-jsx@npm:^5.3.1":
   version: 5.3.1
   resolution: "acorn-jsx@npm:5.3.1"
@@ -1709,6 +1718,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:^0.21.1":
+  version: 0.21.1
+  resolution: "axios@npm:0.21.1"
+  dependencies:
+    follow-redirects: ^1.10.0
+  checksum: 864fb7b5d077d236737f10adca53bf451a93f35a15271f56fba8da07265a02d26b7d881b935a6697dc6adb0549ea3e56d2eecb403edaa3bb78f6479901c10f69
+  languageName: node
+  linkType: hard
+
 "babel-plugin-macros@npm:^2.6.1":
   version: 2.8.0
   resolution: "babel-plugin-macros@npm:2.8.0"
@@ -1734,7 +1752,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"base64-js@npm:^1.0.2":
+"base64-js@npm:^1.0.2, base64-js@npm:^1.2.0":
   version: 1.5.1
   resolution: "base64-js@npm:1.5.1"
   checksum: c1b41a26ddc6620eb7f1ee6c29c812f5942a4e328e74263f995872cfb8ca3aee08542beb25cd10fd7ef16e4f16603e25c35a26e776c01fd55277e5035e829e0e
@@ -1883,6 +1901,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"btoa-lite@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "btoa-lite@npm:1.0.0"
+  checksum: d41fc7dc9f111a0082e1d67554ecdd3add151920bf5f3fbb9bdffd5c67b2e247a8c2a060607e8a2acd518eeb1b75d8a0828c36717f710ceebe0e88eb487a7394
+  languageName: node
+  linkType: hard
+
 "buffer-xor@npm:^1.0.3":
   version: 1.0.3
   resolution: "buffer-xor@npm:1.0.3"
@@ -1961,9 +1986,11 @@ __metadata:
     "@types/react": ^17.0.3
     "@typescript-eslint/eslint-plugin": ^4.22.0
     "@typescript-eslint/parser": ^4.22.0
+    axios: ^0.21.1
     eslint: ^7.25.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-react: ^7.23.2
+    faunadb: ^4.2.0
     framer-motion: ^4.1.9
     next: 10.1.3
     prettier: ^2.2.1
@@ -2241,6 +2268,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cross-fetch@npm:^3.0.6":
+  version: 3.1.4
+  resolution: "cross-fetch@npm:3.1.4"
+  dependencies:
+    node-fetch: 2.6.1
+  checksum: 47b33bc773d53f19805eeac914e7d76e022a1aee3b7a55277fae3d3d1a0cff354b92c4ec6c5d99aeef3e5757c2719e94c37879ba846c33de892e68a655758b61
+  languageName: node
+  linkType: hard
+
 "cross-spawn@npm:^7.0.2":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
@@ -2450,6 +2486,13 @@ __metadata:
   version: 1.2.0
   resolution: "domain-browser@npm:1.2.0"
   checksum: 39a1156552d162c33e0edff62b0f9ae64609d4ffa85ecaccfad2416ee34e4b6c78aea53c30ce167a04421144963a674e8471eba2b6272b4760e020149b9bafbb
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^8.2.0":
+  version: 8.2.0
+  resolution: "dotenv@npm:8.2.0"
+  checksum: 16cb89cbd7b98b053899b8aba8c5044c8fb61a2db8a81fe70360b75035fce5fed53bd7a34d772be717d0880c0321122a4c09423f518025e1b52d96791521b1a7
   languageName: node
   linkType: hard
 
@@ -2773,6 +2816,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"event-target-shim@npm:^5.0.0":
+  version: 5.0.1
+  resolution: "event-target-shim@npm:5.0.1"
+  checksum: d176477a31adf328ff50148886e46cef3f61ff8bdc1d6db161f6b3ead2501085d5652a81fab8dddc59aed93727231c0b5c8a0948de77ae401b2d977a3d18329e
+  languageName: node
+  linkType: hard
+
 "events@npm:^3.0.0":
   version: 3.3.0
   resolution: "events@npm:3.3.0"
@@ -2832,6 +2882,22 @@ __metadata:
   dependencies:
     reusify: ^1.0.4
   checksum: 22822313d66aa7ef7fd392bf2da1cdf074dce902460bf73c0f0da6d58eb394ea8d74b8cce6c9466f5d659a51caeb732f4305cf8514ca8325490a4e3d873f5aa0
+  languageName: node
+  linkType: hard
+
+"faunadb@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "faunadb@npm:4.2.0"
+  dependencies:
+    abort-controller: ^3.0.0
+    base64-js: ^1.2.0
+    btoa-lite: ^1.0.0
+    cross-fetch: ^3.0.6
+    dotenv: ^8.2.0
+    fn-annotate: ^1.1.3
+    object-assign: ^4.1.0
+    util-deprecate: ^1.0.2
+  checksum: f93bc9a62997ad62bcea3a1847c34ebb7667580b578985a10c7a76bd77215877de49480f97f9f2ed394cb01d3b1968569bc4b6b07ab315aa05248e0809af9f2f
   languageName: node
   linkType: hard
 
@@ -2898,12 +2964,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fn-annotate@npm:^1.1.3":
+  version: 1.2.0
+  resolution: "fn-annotate@npm:1.2.0"
+  checksum: 3dc173283bbfce92ad0fae1e32e666a34c1f2bd06356011efef1b72ed4f9c7663ede06e690e791001748f7686b75505c22322bba11cba67b4a84c17185dd0434
+  languageName: node
+  linkType: hard
+
 "focus-lock@npm:^0.8.1":
   version: 0.8.1
   resolution: "focus-lock@npm:0.8.1"
   dependencies:
     tslib: ^1.9.3
   checksum: 8e574d1586b95c8974f0579aa32c4fdce9d2b6e0d7d01616eb71585e65b6940e39ae1aecb2824ede384c4123d16dd4640f2536a210129efad3e1befae6726372
+  languageName: node
+  linkType: hard
+
+"follow-redirects@npm:^1.10.0":
+  version: 1.13.3
+  resolution: "follow-redirects@npm:1.13.3"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: 9ad74c3b66ad5c32d8c009a2afb4e5c1b9e5dbe1f631419296c21f8e4f9976ed2c52f9a676c4acdd1d7f41a8f17a03dfaa3704993b25b5965eb11bc9dc9a8ef5
   languageName: node
   linkType: hard
 
@@ -5762,7 +5845,7 @@ typescript@^4.2.4:
   languageName: node
   linkType: hard
 
-"util-deprecate@npm:^1.0.1, util-deprecate@npm:~1.0.1":
+"util-deprecate@npm:^1.0.1, util-deprecate@npm:^1.0.2, util-deprecate@npm:~1.0.1":
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 73c2b1cf0210ccac300645384d8443cabbd93194117b2dc1b3bae8d8279ad39aedac857e020c4ea505e96a1045059c7359db3df6a9df0be6b8584166c9d61dc9
